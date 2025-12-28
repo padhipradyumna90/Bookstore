@@ -1,0 +1,1 @@
+export {default as about_page_img} from './Home-Page-Banner-About-Us-Buy-Online-Bookbins-01.jpg'
