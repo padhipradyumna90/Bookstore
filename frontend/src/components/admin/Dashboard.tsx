@@ -27,27 +27,27 @@ export default function Dashboard() {
     fetchUserData();
   }, [token]);
 
-  const handleAvatarChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      setAvatarFile(file);
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setAvatarPreview(reader.result);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
+  // const handleAvatarChange = (e) => {
+  //   const file = e.target.files[0];
+  //   if (file) {
+  //     setAvatarFile(file);
+  //     const reader = new FileReader();
+  //     reader.onloadend = () => {
+  //       setAvatarPreview(reader.result);
+  //     };
+  //     reader.readAsDataURL(file);
+  //   }
+  // };
 
-  const handleAvatarUpdate = async (e) => {
-    e.preventDefault();
+  // const handleAvatarUpdate = async () => {
+  //   e.preventDefault();
 
-    if (!avatarFile) {
-      return alert("Please select an image to upload.");
-    }
+  //   if (!avatarFile) {
+  //     return alert("Please select an image to upload.");
+  //   }
 
-    const formData = new FormData();
-    formData.append("avatar", avatarFile);
+  //   const formData = new FormData();
+  //   formData.append("avatar", avatarFile);
 
     try {
       const response = await axios.put("/api/user/update-profile", formData, {
